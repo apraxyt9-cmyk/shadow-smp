@@ -7,14 +7,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
     <style>
         :root {
-            --mc-tan: #e0cca1;
+            --mc-tan: #e0cca1; 
             --mc-tan-dark: #c8b488;
             --mc-border: #3b2818;
             --mc-gray: #95a5a6;
             --mc-dark-gray: #2c3e50;
             --btn-green: #5c9e42;
             --btn-green-shadow: rgba(0,0,0,0.3);
-            --rule-bg: #4a3b2c;
+            --rule-bg: #1a1a1a; 
         }
 
         * {
@@ -24,29 +24,30 @@
         }
 
         body {
-            background: url('https://images.unsplash.com/photo-1607513746994-51f730a44832?q=80&w=1080&auto=format&fit=crop') center bottom/cover fixed;
+            background: linear-gradient(135deg, #000000 0%, #ffffff 100%);
+            background-attachment: fixed; 
             font-family: 'VT323', monospace;
             display: flex;
             justify-content: center;
-            background-color: #2c1e16;
         }
 
         .mobile-app {
             width: 100%;
             max-width: 420px;
             min-height: 100vh;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%);
             display: flex;
             flex-direction: column;
             box-shadow: 0 0 20px rgba(0,0,0,0.8);
+            position: relative;
         }
 
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 15px 20px;
-            background: rgba(30, 20, 10, 0.85);
+            background: rgba(10, 10, 10, 0.9);
             border-bottom: 3px solid var(--mc-border);
         }
 
@@ -70,7 +71,7 @@
         .page-title {
             text-align: center;
             font-family: 'Press Start 2P', cursive;
-            color: #e8d4a2;
+            color: #ffffff;
             font-size: 20px;
             line-height: 1.6;
             margin: 15px 0 25px 0;
@@ -83,14 +84,15 @@
         }
 
         .mc-card {
-            background-color: var(--mc-tan);
+            background: linear-gradient(135deg, #1f1f1f 0%, #333333 100%); 
+            color: var(--mc-tan);
             border: 4px solid var(--mc-border);
             padding: 25px 20px;
             position: relative;
             box-shadow: 
-                inset -4px -4px 0px rgba(0,0,0,0.15), 
-                inset 4px 4px 0px rgba(255,255,255,0.4),
-                0 10px 20px rgba(0,0,0,0.5);
+                inset -4px -4px 0px rgba(0,0,0,0.3), 
+                inset 4px 4px 0px rgba(255,255,255,0.1),
+                0 10px 20px rgba(0,0,0,0.6);
             margin-bottom: 25px;
         }
 
@@ -111,9 +113,9 @@
             font-family: 'Press Start 2P', cursive;
             font-size: 14px;
             text-align: center;
-            color: #222;
+            color: #ffffff;
             margin-bottom: 25px;
-            text-shadow: 1px 1px 0px rgba(255,255,255,0.6);
+            text-shadow: 1px 1px 0px #000;
         }
 
         .input-group {
@@ -126,17 +128,28 @@
             font-family: 'Press Start 2P', cursive;
             font-size: 10px;
             margin-bottom: 12px;
-            color: #111;
+            color: var(--mc-tan);
         }
 
         .input-group input {
             padding: 14px;
             font-family: 'VT323', monospace;
-            font-size: 18px;
-            border: 3px solid #111;
-            background: #fff;
+            font-size: 20px;
+            border: 3px solid #1a0000;
+            background: linear-gradient(135deg, #4a0000 0%, #8b0000 40%, #000000 100%);
+            color: #ffffff; 
             outline: none;
-            box-shadow: inset 3px 3px 0 rgba(0,0,0,0.1);
+            box-shadow: inset 3px 3px 8px rgba(0,0,0,0.8), 0 4px 6px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .input-group input:focus {
+            border-color: #ff3333;
+            box-shadow: inset 3px 3px 8px rgba(0,0,0,0.9), 0 0 12px rgba(255,0,0,0.6);
         }
 
         .submit-btn {
@@ -176,29 +189,29 @@
             line-height: 1.3;
         }
 
-        /* Dynamic Accordion System */
         .accordion-wrapper {
             margin-bottom: 12px;
         }
 
         .accordion-btn {
             width: 100%;
-            background-color: var(--mc-tan-dark);
+            background: linear-gradient(to right, #1a1a1a 0%, #4a4a4a 100%);
             border: 3px solid var(--mc-border);
             padding: 14px 18px;
             font-family: 'Press Start 2P', cursive;
             font-size: 11px;
-            color: #222;
+            color: #ffffff; 
             display: flex;
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
-            box-shadow: inset -3px -3px 0px rgba(0,0,0,0.2), inset 2px 2px 0px rgba(255,255,255,0.4);
-            transition: background-color 0.2s;
+            box-shadow: inset -3px -3px 0px rgba(0,0,0,0.3), inset 2px 2px 0px rgba(255,255,255,0.1);
+            transition: background 0.2s;
+            text-shadow: 1px 1px 0 #000;
         }
 
         .accordion-btn.active {
-            background-color: var(--mc-tan);
+            background: linear-gradient(to right, #333333 0%, #666666 100%);
         }
 
         .arrow-down {
@@ -206,7 +219,7 @@
             height: 0; 
             border-left: 6px solid transparent;
             border-right: 6px solid transparent;
-            border-top: 8px solid #222;
+            border-top: 8px solid #ffffff; 
             transition: transform 0.2s;
         }
 
@@ -220,7 +233,7 @@
             transition: max-height 0.2s ease-out;
             background-color: var(--rule-bg);
             border: 0px solid var(--mc-border);
-            color: #e0cca1;
+            color: var(--mc-tan); 
             font-size: 18px;
             line-height: 1.4;
         }
@@ -255,6 +268,39 @@
             text-shadow: 2px 2px 0 #000;
             text-decoration: none;
         }
+
+        /* Fixed Social Popups with inline SVG compatibility */
+        .social-popup {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .social-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background-color: #fff;
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.15) translateY(-5px);
+        }
+        
+        .social-btn svg {
+            width: 36px;
+            height: 36px;
+        }
     </style>
 </head>
 <body>
@@ -276,7 +322,7 @@
                 <form id="whitelistForm">
                     <div class="input-group">
                         <label>GAME TAG</label>
-                        <input type="text" id="gametag" placeholder="Enter your Minecraft Username" required>
+                        <input type="text" id="gametag" placeholder="Enter Username..." required>
                     </div>
 
                     <button type="submit" class="submit-btn" id="submitBtn">SUBMIT WHITELIST</button>
@@ -314,10 +360,31 @@
 
             <a href="#" class="footer-link">THE SHADOWS OFFICIAL SMP</a>
         </main>
+        
+        <div class="social-popup">
+            
+            <a href="https://www.facebook.com/shanto.s.34" target="_blank" class="social-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#1877F2">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+            </a>
+            
+            <a href="https://m.me/j/AbYgnk98Hyl6OyEr/?send_source=gc%3Acopy_invite_link_c" class="social-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                    <defs>
+                        <linearGradient id="messengerGrad" x1="16.539" y1="247.288" x2="246.368" y2="23.955" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#00C6FF"></stop>
+                            <stop offset="1" stop-color="#0078FF"></stop>
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#messengerGrad)" d="M128,0C55.882,0,0,52.883,0,123.633c0,37.387,15.892,70.198,40.404,92.839 c1.266,1.164,2.05,2.784,2.155,4.482l2.368,38.257c0.41,6.611,7.243,10.669,13.116,7.79l41.523-20.354 c1.365-0.669,2.92-0.895,4.423-0.647C111.815,247.33,119.784,248,128,248c72.118,0,128-52.883,128-124.367S200.118,0,128,0z"></path>
+                    <path fill="#FFF" d="M137.525,160.032l-30.829-32.96c-4.48-4.792-12.001-5.187-16.945-0.887l-35.807,31.139 c-5.467,4.755-13.067-1.921-8.736-7.669l34.423-45.549c5.143-6.804,14.654-8.683,21.849-4.316l29.803,18.156 c3.385,2.062,7.728,1.758,10.793-0.758l37.281-30.569c5.556-4.555,12.986,2.378,8.406,8.106l-33.376,41.745 C149.208,162.977,141.874,164.681,137.525,160.032z"></path>
+                </svg>
+            </a>
+        </div>
     </div>
 
     <script>
-        // --- Telegram Whitelist Handling Script ---
         document.getElementById('whitelistForm').addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -370,7 +437,6 @@
             });
         });
 
-        // --- Rules Accordion Toggle Script ---
         const accordions = document.querySelectorAll('.accordion-btn');
         
         accordions.forEach(acc => {
